@@ -1,6 +1,8 @@
 # Corvorum OS - Prompt del Cuervo
 # El cuervo observa. El cuervo recuerda. El cuervo ejecuta.
 
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 [](fg:#1a0a2e)\
 [corvum](fg:#6b3fa0 bg:#2d1b4e)\
@@ -64,13 +66,12 @@ read_only_style   = "fg:blood"
 format            = "[> $path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
-symbol = "git:"
 style  = "bold fg:sigil"
-format = "[$symbol$branch]($style) "
+format = "[git:$branch]($style) "
 
 [git_status]
-format    = '([$all_status$ahead_behind]($style) )'
-style     = "bold fg:blood"
+format = '([$all_status$ahead_behind]($style) )'
+style  = "bold fg:blood"
 
 [cmd_duration]
 min_time = 2000
@@ -84,35 +85,29 @@ format      = "[$time]($style)"
 time_format = "%H:%M"
 
 [python]
-symbol = "py "
 style  = "bold fg:gold"
-format = "[$symbol$version]($style) "
+format = "[py $version]($style) "
 
 [node]
-symbol = "node "
 style  = "bold fg:raven"
-format = "[$symbol$version]($style) "
+format = "[node $version]($style) "
 
 [rust]
-symbol = "rs "
 style  = "bold fg:ember"
-format = "[$symbol$version]($style) "
+format = "[rs $version]($style) "
 
 [golang]
-symbol = "go "
 style  = "bold fg:silver"
-format = "[$symbol$version]($style) "
+format = "[go $version]($style) "
 
 [docker_context]
-symbol = "docker "
 style  = "bold fg:mist"
-format = "[$symbol$context]($style) "
+format = "[docker $context]($style) "
 
 [kubernetes]
 disabled = false
-symbol   = "k8s "
 style    = "bold fg:sigil"
-format   = "[$symbol$context]($style) "
+format   = "[k8s $context]($style) "
 
 [character]
 success_symbol = "[>](bold fg:raven)"
