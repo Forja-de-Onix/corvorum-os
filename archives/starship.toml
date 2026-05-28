@@ -1,11 +1,3 @@
-# Limpiar el archivo corrupto
-rm ~/.config/starship.toml
-sudo rm /etc/skel/.config/starship.toml
-
-# Reescribir con comentarios ASCII seguros
-sudo tee /etc/skel/.config/starship.toml > /dev/null << 'EOF'
-"$schema" = 'https://starship.rs/config-schema.json'
-
 # Corvorum OS - Prompt del Cuervo
 # El cuervo observa. El cuervo recuerda. El cuervo ejecuta.
 
