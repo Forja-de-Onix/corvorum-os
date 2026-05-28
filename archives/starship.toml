@@ -1,0 +1,146 @@
+# Escribir la configuración de Starship (esotérica — Corvorum OS)
+sudo tee /etc/skel/.config/starship.toml > /dev/null << 'EOF'
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# ─── Corvorum OS · Prompt del Cuervo ─────────────────────────────────────────
+# El cuervo observa. El cuervo recuerda. El cuervo ejecuta.
+# ─────────────────────────────────────────────────────────────────────────────
+
+format = """
+[](fg:#1a0a2e)\
+[▓▒░](fg:#2d1b4e bg:#1a0a2e)\
+[ ](fg:#6b3fa0 bg:#2d1b4e)\
+$os\
+[](fg:#2d1b4e bg:#1a0a2e)\
+ $username$hostname\
+[  ](fg:#4a1942)\
+$directory\
+$git_branch$git_status\
+$python$node$rust$golang$java$docker_context$kubernetes\
+$fill\
+$cmd_duration$time
+[](fg:#1a0a2e)\
+[▓▒░](fg:#2d1b4e bg:#1a0a2e)\
+$character\
+[░▒▓](fg:#1a0a2e bg:#2d1b4e)\
+"""
+
+palette = "corvorum"
+
+[palettes.corvorum]
+raven      = "#9b59b6"
+void       = "#1a0a2e"
+dusk       = "#2d1b4e"
+ember      = "#c0392b"
+bone       = "#d5c5a1"
+mist       = "#7f8c8d"
+sigil      = "#8e44ad"
+blood      = "#922b21"
+silver     = "#bdc3c7"
+gold       = "#f39c12"
+
+[fill]
+symbol = " "
+
+[os]
+disabled = false
+style = "bold fg:raven bg:dusk"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Linux      = "🜏 "
+Arch       = "⛦ "
+Debian     = "☽ "
+Ubuntu     = "◉ "
+NixOS      = "⚗ "
+Unknown    = "🝙 "
+
+[username]
+show_always = true
+style_user  = "bold fg:bone"
+style_root  = "bold fg:ember"
+format      = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style    = "bold fg:mist"
+format   = "[󰇘@$hostname]($style) "
+
+[directory]
+style              = "bold fg:raven"
+truncation_length  = 4
+truncate_to_repo   = true
+read_only          = " ⛒"
+read_only_style    = "fg:blood"
+format             = "[⌘ $path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = "⑂ "
+style  = "bold fg:sigil"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+format    = '([\[$all_status$ahead_behind\]]($style) )'
+style     = "bold fg:blood"
+modified  = "✦"
+untracked = "?"
+deleted   = "✗"
+staged    = "⊕"
+ahead     = "⇡"
+behind    = "⇣"
+
+[cmd_duration]
+min_time           = 2000
+style              = "fg:gold"
+format             = "[⧗ $duration]($style) "
+
+[time]
+disabled     = false
+style        = "fg:mist"
+format       = "[\\[$time\\]]($style)"
+time_format  = "%H:%M"
+
+[python]
+symbol = "𝜆 "
+style  = "bold fg:gold"
+format = "[$symbol$version]($style) "
+
+[node]
+symbol = "⬡ "
+style  = "bold fg:raven"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = "⚙ "
+style  = "bold fg:ember"
+format = "[$symbol$version]($style) "
+
+[golang]
+symbol = "∞ "
+style  = "bold fg:silver"
+format = "[$symbol$version]($style) "
+
+[java]
+symbol = "☕ "
+style  = "bold fg:bone"
+format = "[$symbol$version]($style) "
+
+[docker_context]
+symbol = "⬡ "
+style  = "bold fg:mist"
+format = "[$symbol$context]($style) "
+
+[kubernetes]
+disabled = false
+symbol   = "⎈ "
+style    = "bold fg:sigil"
+format   = "[$symbol$context]($style) "
+
+[character]
+success_symbol = "[❯](bold fg:raven)"
+error_symbol   = "[☠](bold fg:blood)"
+vimcmd_symbol  = "[◈](bold fg:sigil)"
+EOF
+
+# Copiar al usuario actual
+cp /etc/skel/.config/starship.toml ~/.config/starship.toml
