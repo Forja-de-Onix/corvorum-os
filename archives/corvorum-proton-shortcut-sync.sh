@@ -21,15 +21,22 @@ CATEGORY="Corvorum-Otros"
 
 mkdir -p "$DEST_DIR"
 
-if [[ ! -d "$WATCH_DIR" ]]; then
-    echo "No existe la carpeta a vigilar: $WATCH_DIR" >&2
-    echo "Revisa la ruta del prefijo (PREFIX) o instala algo primero con umu-run." >&2
-    exit 1
-fi
-
 if ! command -v inotifywait &>/dev/null; then
     echo "Falta inotify-tools. Instala con: sudo apt install inotify-tools" >&2
     exit 1
+fi
+
+# En una instalación limpia, la carpeta proton_shortcuts todavía no existe
+# porque el usuario no ha ejecutado umu-run ni una vez. En vez de morir aquí
+# (lo que dejaría al servicio systemd en fallo permanente), esperamos activamente
+# a que aparezca, comprobando periódicamente. Esto es normal y no es un error.
+if [[ ! -d "$WATCH_DIR" ]]; then
+    echo "La carpeta $WATCH_DIR todavía no existe."
+    echo "Esperando a que se cree (aparecerá tras el primer uso de umu-run)..."
+    until [[ -d "$WATCH_DIR" ]]; do
+        sleep 10
+    done
+    echo "Carpeta detectada, arrancando vigilancia."
 fi
 
 # --- Detección de juegos DOS empaquetados (estilo GOG con DOSBox embebido) ---
