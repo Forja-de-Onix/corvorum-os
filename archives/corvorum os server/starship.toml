@@ -71,116 +71,116 @@ deleted = "[x$count](bold #B22222) "
 # --- ENVIRONMENTS & CONTAINERS ---
 
 [conda]
-symbol = "(conda) "
+symbol = "conda: "
 format = "via [$symbol$environment]($style) "
 style = "bold #00BBF9"
 
 [container]
-symbol = "[container] "
+symbol = "container: "
 format = "dentro de [$symbol$name]($style) "
 style = "bold red italic"
 
 [docker_context]
-symbol = "[docker] "
+symbol = "docker: "
 format = "en [$symbol$context]($style) "
 style = "bold #00BBF9"
 
 [kubernetes]
-symbol = "[k8s] "
+symbol = "k3s: "
 format = "en [$symbol$context( \\($namespace\\))]($style) "
 style = "bold #9B5DE5"
 disabled = false
 
 [vagrant]
-symbol = "(vagrant) "
+symbol = "vagrant: "
 format = "via [$symbol$version]($style) "
 style = "bold #9A8C98"
 
 [helm]
-symbol = "(helm) "
+symbol = "helm: "
 format = "via [$symbol$version]($style) "
 style = "bold #EE4266"
 
 [terraform]
-symbol = "(tf) "
+symbol = "tf: "
 format = "via [$symbol$workspace]($style) "
 style = "bold #F15BB5"
 
 [package]
-symbol = "[pkg] "
+symbol = "pkg: "
 format = "[$symbol$version]($style) "
 style = "dimmed #00F5D4"
 
 # --- COMPILED & SYSTEM LANGUAGES (The Core Elements) ---
 
 [c]
-symbol = "(C) "
+symbol = "C: "
 format = "via [$symbol$version(-$name)]($style) "
 style = "bold #00FFFF"
 
 [cmake]
-symbol = "(cmake) "
+symbol = "cmake: "
 format = "via [$symbol$version]($style) "
 style = "bold #9A8C98"
 
 [cpp]
-symbol = "(C++) "
+symbol = "Cpp: "
 format = "via [$symbol$version(-$name)]($style) "
 style = "bold #00F5D4"
 
 [cobol]
-symbol = "(COBOL) "
+symbol = "COBOL: "
 format = "via [$symbol$version]($style) "
 style = "italic #9A8C98"
 
 [rust]
-symbol = "(rust) "
+symbol = "rust: "
 format = "via [$symbol$version]($style) "
 style = "bold #EE4266"
 
 # --- INTERPRETED & RUNTIME VIRTUES (The Liquid Shards) ---
 
 [dart]
-symbol = "(dart) "
+symbol = "dart: "
 format = "via [$symbol$version]($style) "
 style = "bold #00BBF9"
 
 [golang]
-symbol = "(go) "
+symbol = "go: "
 format = "via [$symbol$version]($style) "
 style = "bold #00FFFF"
 
 [gradle]
-symbol = "(gradle) "
+symbol = "gradle: "
 format = "via [$symbol$version]($style) "
 style = "bold #9B5DE5"
 
 [java]
-symbol = "(java) "
+symbol = "java: "
 format = "via [$symbol$version(-$name)]($style) "
 style = "bold #F15BB5"
 
 [kotlin]
-symbol = "(kotlin) "
+symbol = "kotlin: "
 format = "via [$symbol$version]($style) "
 style = "bold #9B5DE5"
 
 [nodejs]
-symbol = "(node) "
+symbol = "node: "
 format = "via [$symbol$version]($style) "
 style = "bold #00F5D4"
 
 [php]
-symbol = "(php) "
+symbol = "php: "
 format = "via [$symbol$version]($style) "
 style = "bold #9B5DE5"
 
 [python]
-symbol = "(python) "
+symbol = "python: "
 format = "via [$symbol$version]($style) "
 style = "bold #D4AF37"
 
 [ruby]
-symbol = "(ruby) "
+symbol = "ruby: "
 format = "via [$symbol$version]($style) "
 style = "bold #EE4266"
