@@ -1,0 +1,20 @@
+#!/bin/bash
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+echo ""
+echo "  ██████╗ ██████╗ ██████╗ ██╗   ██╗ ██████╗ ██████╗ ██╗   ██╗███╗   ███╗    ██████╗ ██████╗"
+echo " ██╔════╝██╔═══██╗██╔══██╗██║   ██║██╔═══██╗██╔══██╗██║   ██║████╗ ████║   ██╔═══██╗██╔═══╝"
+echo " ██║     ██║   ██║██████╔╝██║   ██║██║   ██║██████╔╝██║   ██║██╔████╔██║   ██║   ██║██████╗"
+echo " ██║     ██║   ██║██╔══██╗╚██╗ ██╔╝██║   ██║██╔══██╗██║   ██║██║╚██╔╝██║   ██║   ██║    ██║"
+echo " ╚██████╗╚██████╔╝██║  ██║ ╚████╔╝ ╚██████╔╝██║  ██║╚██████╔╝██║ ╚═╝ ██║   ╚██████╔╝██████║"
+echo "  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝  ╚═══╝   ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝    ╚═════╝ ╚═════╝"
+echo ""
+echo "  Server Edition 1.0 | $(uname -r)"
+echo "  IA Local: $(ollama list 2>/dev/null | tail -n +2 | wc -l) modelo(s) disponible(s)"
+echo "  Escribe: "
+echo "   - 'ai' para consultar al asistente Odín"
+echo "   - 'ctop' para administrador de contenedores"
+echo "   - 'btop' para administrador de tareas"
+echo "   - 'mc' para ejecutar el explorador de archivos"
+echo ""
